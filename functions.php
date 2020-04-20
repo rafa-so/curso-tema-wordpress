@@ -15,10 +15,30 @@ function load_scripts(){
 
 add_action('wp_enqueue_scripts', 'load_scripts');
 
-// Registrando nossos menus
-register_nav_menus(
-  array(
-    'my_main_menu' => 'Main Menu',
-    'footer_menu' => 'Footer Menu'
-  )
-);
+function wpcurso_config(){
+  // Registrando nossos menus
+  register_nav_menus(
+    array(
+      'my_main_menu' => 'Main Menu',
+      'footer_menu' => 'Footer Menu'
+    )
+  );
+
+  $args = array(
+    'height' => 225,
+    'width' => 1920
+  );
+
+  add_theme_support('custom-header', $args);
+}
+
+add_action('after_setup_theme', 'wpcurso_config', 0);
+
+
+
+
+function change_graphic_lib($array) {
+  return array('WP_Image_Editor_GD', 'WP_Image_Editor_Imagick');
+}
+
+add_filter('wp_image_editors', 'change_graphic_lib');
