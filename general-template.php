@@ -15,7 +15,7 @@
       <section class="middle-area">
         <div class="container">
           <div class="general-template">
-          <?php 
+            <?php 
               if( have_posts() ):
                 while( have_posts() ): the_post();
             ?>
