@@ -16,7 +16,7 @@
         <section class="middle-area">
           <div class="container">
             <div class="row">
-              <aside class="sidebar col-md-4">Barra Lateral</aside>
+              <?php get_sidebar('home'); ?>
               <div class="news col-md-8">
                 <p>Conteúdo vindo do arquivo home</p>
               </div>
