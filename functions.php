@@ -16,7 +16,7 @@ function load_scripts(){
 
 add_action('wp_enqueue_scripts', 'load_scripts');
 
-function wpcurso_config(){
+function wpcurso_config() {
   // Registrando nossos menus
   register_nav_menus(
     array(
