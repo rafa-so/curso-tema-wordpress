@@ -1,12 +1,14 @@
 <article <?php post_class( array( 'class' => 'featured' ) ); ?>>
-  <h2>
-    <?php the_title();?>
-  </h2>
   <div class="thumbnail">
-    <?php the_post_thumbnail( 'large', array( 'class' => 'img-fluid' )); ?>
+    <a href="<?php the_permalink(); ?>">
+      <?php the_post_thumbnail( 'large', array( 'class' => 'img-fluid' )); ?>
+    </a>
   </div>
+  <h2>
+    <a href="<?php the_permalink(); ?>"><?php the_title();?></a>
+  </h2>
   <div class="meta-info">
-    <p> 
+    <p>
       by <spam><?php the_author_posts_link(); ?> </spam>
       Categories: <spam><?php the_category( '' ); ?></spam>
       <?php the_tags( 'Tags: <spam> ', ', ', '</spam>' )?>
