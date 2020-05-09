@@ -1,5 +1,8 @@
 <?php
 
+// Recuperando o arquivo do Customizer
+require get_template_directory() . '/inc/customizer.php';
+
 // Carregando nossos scripts e folha de estilos
 function load_scripts(){
   wp_enqueue_script('bootstrap-js', 
