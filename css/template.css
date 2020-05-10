@@ -87,6 +87,13 @@ footer{ background: #000; padding: 15px 0; color: #fcfae1; }
 
 /************** INNER PAGES *****************/
 
+/* Align */
+.align {
+    display: center;
+    align-items: center;
+    width: 100%;
+}
+
 /* Blog */
 .wp-post-image{ float: left; margin: 0 15px 10px 0; } 
 .blog embed, .blog iframe, .blog object, .blog video { margin-bottom: 1.6em; max-width: 100%; vertical-align: middle; } /* Deixa os vídeos responsivos */

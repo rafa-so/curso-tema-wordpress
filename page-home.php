@@ -100,13 +100,17 @@
             </div>
           </div>
         </section>
+        <?php
+          $key = get_theme_mod( 'set_map_apikey' );
+          $address = urlencode(get_theme_mod( 'set_map_address' ));
+        ?>
         <section class="map">
           <iframe
             width="100%"
             height="350"
             frameborder="0" style="border:0"
-            src="https://www.google.com/maps/embed/v1/place?key=key
-              &q=Space+Needle,Seattle+WA&zoom=15" allowfullscreen>
+            src="https://www.google.com/maps/embed/v1/place?key=<?php echo $key ?>
+              &q=<?php echo $address ?>&zoom=15" allowfullscreen>
           </iframe>
         </section>
       </main>
