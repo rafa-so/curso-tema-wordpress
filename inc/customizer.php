@@ -72,6 +72,66 @@ function wpcurso_customizer( $wp_customize ){
             'type' => 'textarea'
         )
     );
+
+    //Slider
+    $wp_customize->add_section(
+        'sec_slide', array(
+            'title' => 'slider',
+            'description' => 'Slider Section'
+        )
+    );
+
+    $wp_customize->add_setting(
+        'set_slider_option', array(
+            'type' => 'theme_mod',
+            'default' => '1',
+            'Sanitize_callback' => 'wpcurso_sanitize_select'
+        )
+    );
+
+    $wp_customize->add_control(
+        'set_slider_option', array(
+            'label' => 'Choose your design type here',
+            'description' => "Choose your design type",
+            'section' => 'sec_slide',
+            'type' => 'select',
+            'choices' => array(
+                '1' => 'Design Type 1',
+                '2' => 'Design Type 2',
+                '3' => 'Design Type 3',
+                '4' => 'Design Type 4',
+            )
+        )
+    );
+
+    // Limit
+    $wp_customize->add_setting(
+        'set_slider_limit', array(
+            'type' => 'theme_mod',
+            'default' => '5',
+            'Sanitize_callback' => 'absint'
+        )
+    );
+
+    $wp_customize->add_control(
+        'set_slider_limit', array(
+            'label' => 'Number of posts to dislay',
+            'description' => "Number of posts to be displayed",
+            'section' => 'sec_slide',
+            'type' => 'number'
+        )
+    );
 }
 
 add_action( 'customize_register', 'wpcurso_customizer' );
+
+function wpcurso_sanitize_select( $input, $setting ){
+    //input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
+    $input = sanitize_key($input);
+
+    //get the list of possible select options 
+    $choices = $setting->manager->get_control( $setting->id )->choices;
+                      
+    //return input if valid or return default option
+    return ( array_key_exists( $input, $choices ) ? $input : $setting->default );                
+}

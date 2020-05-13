@@ -42,6 +42,8 @@ function wpcurso_config() {
     'width' => 200
   ));
   
+  $textdomain = 'wpcurso';
+  load_theme_textdomain( $textdomain, get_template_directory() . '/languages/' );
 }
 
 add_action('after_setup_theme', 'wpcurso_config', 0);

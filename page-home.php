@@ -2,7 +2,15 @@
     <div class="content-area">
       <main>
         <section class="slide">
-          <?php echo do_shortcode('[recent_post_slider design="design-2" autoplay="false"]'); ?>
+          <?php 
+            $design = get_theme_mod( 'set_slider_options' );
+            $limit = get_theme_mod( 'set_slider_limit' );
+            
+            echo do_shortcode(
+              '[recent_post_slider design="design-"' . $design . 
+              '" autoplay="false" limit="' . $limit . '"]'
+            ); 
+          ?>
         </section>
         <section class="services">
           <div class="container">
