@@ -29,7 +29,7 @@
               endwhile;
               else:
             ?>
-              <p>There's nothing yet to be displayed...</p>
+              <p><?php _e( "There's nothing yet to be displayed...", 'wpcurso' ) ?></p>
             <?php endif; ?>
           </div>
         </div>

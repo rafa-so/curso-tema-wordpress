@@ -10,7 +10,7 @@
             <?php 
               wp_nav_menu(
                 array(
-                  'theme_location' => 'footer_menu'
+                  'theme_location' => __( 'footer_menu', 'wpcurso' )
                 )
               );
             ?>

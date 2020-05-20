@@ -4,12 +4,12 @@
   </h2>
   <div class="meta-info">
     <p>
-      by <?php the_author_posts_link(); ?> 
+    <?php _e( 'by', 'wpcurso' ) ?> <?php the_author_posts_link(); ?> 
     </p>
     <?php if( has_category() ): ?>
-      <p>Categories: <?php the_category( '' ); ?></p>
+      <p><?php _e( 'Categories:', 'wpcurso' ) ?> <?php the_category( '' ); ?></p>
     <?php endif; ?>
-    <p><?php the_tags( 'Tags: ', ', ' )?></p>
+    <p><?php the_tags( __( 'Tags:', 'wpcurso' ), ', ' )?></p>
   </div>
   <?php the_excerpt(); ?>
 </article>

@@ -5,23 +5,23 @@ function wpcurso_customizer( $wp_customize ){
 
     $wp_customize->add_section(
         'sec_copyright', array(
-            'title' => 'Copyright',
-            'description' => 'Copyright Section'
+            'title' => __( 'Copyright', 'wpcurso' ),
+            'description' => __( 'Copyright Section', 'wpcurso' )
         )
     );
 
     $wp_customize->add_setting(
         'set_copyright', array(
             'type' => 'theme_mod',
-            'default' => 'Copyright - All right reserved',
+            'default' => __( 'Copyright - All right reserved', 'wpcurso' ),
             'Sanitize_callback' => 'wp_filter_nohtml_kses'
         )
     );
 
     $wp_customize->add_control(
         'set_copyright', array(
-            'label' => 'Copyright',
-            'description' => "Choose whether to show the Servises section on not",
+            'label' => __( 'Copyright', 'wpcurso' ),
+            'description' => __( "Choose whether to show the Servises section on not", 'wpcurso' ),
             'section' => 'sec_copyright',
             'type' => 'text'
         )
@@ -32,8 +32,8 @@ function wpcurso_customizer( $wp_customize ){
     // Map
     $wp_customize->add_section(
         'sec_map', array(
-            'title' => 'Map',
-            'description' => 'Map Section'
+            'title' => __( 'Map', 'wpcurso' ),
+            'description' => __( 'Map Section', 'wpcurso' )
         )
     );
 
@@ -48,8 +48,11 @@ function wpcurso_customizer( $wp_customize ){
 
     $wp_customize->add_control(
         'set_map_apikey', array(
-            'label' => 'API Key',
-            'description' => "Get api key in link",
+            'label' => __( 'API Key', 'wpcurso' ),
+            'description' => sprintf( 
+                __( 'Get yout key <a target="blank" href="%s">here</a>', 'wpcurso' ),
+                'https://console.developers.google.com/flows/enableapi?apiid=maps_backend'
+            ),
             'section' => 'sec_map',
             'type' => 'text'
         )
@@ -66,8 +69,8 @@ function wpcurso_customizer( $wp_customize ){
 
     $wp_customize->add_control(
         'set_map_address', array(
-            'label' => 'Type yout address here',
-            'description' => "No special charecteres allowed",
+            'label' => __( 'Type your address here', 'wpcurso' ),
+            'description' => __( "No special charecteres allowed", 'wpcurso' ),
             'section' => 'sec_map',
             'type' => 'textarea'
         )
@@ -76,8 +79,8 @@ function wpcurso_customizer( $wp_customize ){
     //Slider
     $wp_customize->add_section(
         'sec_slide', array(
-            'title' => 'slider',
-            'description' => 'Slider Section'
+            'title' => __( 'slider', 'wpcurso' ),
+            'description' => __( 'Slider Section', 'wpcurso' )
         )
     );
 
@@ -91,15 +94,15 @@ function wpcurso_customizer( $wp_customize ){
 
     $wp_customize->add_control(
         'set_slider_option', array(
-            'label' => 'Choose your design type here',
-            'description' => "Choose your design type",
+            'label' => __( 'Choose your design type here', 'wpcurso' ),
+            'description' => __( "Choose your design type", 'wpcurso' ),
             'section' => 'sec_slide',
             'type' => 'select',
             'choices' => array(
-                '1' => 'Design Type 1',
-                '2' => 'Design Type 2',
-                '3' => 'Design Type 3',
-                '4' => 'Design Type 4',
+                '1' => __( 'Design Type 1', 'wpcurso' ),
+                '2' => __( 'Design Type 2', 'wpcurso' ),
+                '3' => __( 'Design Type 3', 'wpcurso' ),
+                '4' => __( 'Design Type 4', 'wpcurso' ),
             )
         )
     );
@@ -115,8 +118,8 @@ function wpcurso_customizer( $wp_customize ){
 
     $wp_customize->add_control(
         'set_slider_limit', array(
-            'label' => 'Number of posts to dislay',
-            'description' => "Number of posts to be displayed",
+            'label' => __( 'Number of posts to dislay', 'wpcurso' ),
+            'description' => __( "Number of posts to be displayed", 'wpcurso' ),
             'section' => 'sec_slide',
             'type' => 'number'
         )

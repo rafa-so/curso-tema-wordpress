@@ -31,10 +31,10 @@ if ( $comments ) {
 			<h2 class="comment-reply-title">
 			<?php
 			if ( ! have_comments() ) {
-				_e( 'Leave a comment', 'twentytwenty' );
+				_e( 'Leave a comment', 'wpcurso' );
 			} elseif ( '1' === $comments_number ) {
 				/* translators: %s: Post title. */
-				printf( _x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'twentytwenty' ), get_the_title() );
+				printf( _x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'wpcurso' ), get_the_title() );
 			} else {
 				printf(
 					/* translators: 1: Number of comments, 2: Post title. */
@@ -43,7 +43,7 @@ if ( $comments ) {
 						'%1$s replies on &ldquo;%2$s&rdquo;',
 						$comments_number,
 						'comments title',
-						'twentytwenty'
+						'wpcurso'
 					),
 					number_format_i18n( $comments_number ),
 					get_the_title()
@@ -71,8 +71,8 @@ if ( $comments ) {
 					'echo'      => false,
 					'end_size'  => 0,
 					'mid_size'  => 0,
-					'next_text' => __( 'Newer Comments', 'twentytwenty' ) . ' <span aria-hidden="true">&rarr;</span>',
-					'prev_text' => '<span aria-hidden="true">&larr;</span> ' . __( 'Older Comments', 'twentytwenty' ),
+					'next_text' => __( 'Newer Comments', 'wpcurso' ) . ' <span aria-hidden="true">&rarr;</span>',
+					'prev_text' => '<span aria-hidden="true">&larr;</span> ' . __( 'Older Comments', 'wpcurso' ),
 				)
 			);
 
@@ -124,7 +124,7 @@ if ( comments_open() || pings_open() ) {
 
 	<div class="comment-respond" id="respond">
 
-		<p class="comments-closed"><?php _e( 'Comments are closed.', 'twentytwenty' ); ?></p>
+		<p class="comments-closed"><?php _e( 'Comments are closed.', 'wpcurso' ); ?></p>
 
 	</div><!-- #respond -->
 

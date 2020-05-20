@@ -15,7 +15,7 @@
         <section class="services">
           <div class="container">
             <div class="row">
-              <h1>Our Services</h1>
+              <h1><?php _e( 'Our Services', 'wpcurso' ) ?></h1>
               <div class="row">
                 <div class="col-sm-4">
                   <div class="services-item">
@@ -54,7 +54,7 @@
               <?php get_sidebar('home'); ?>
               <div class="news col-md-8">
                 <div class="container">
-                  <h1>Latest News</h1>
+                  <h1><?php _e( 'Latest News', 'wpcurso' ) ?></h1>
                   <div class="row">
                     <?php
                       $featured = new WP_Query( 

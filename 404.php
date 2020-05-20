@@ -11,15 +11,15 @@
             <div class="row">
               <div class="error-404 col-md-8">
                 <header>
-                    <h1>Página não encontrada</h1>
-                    <p>A página solilcitada não foi encontrada</p>
+                    <h1><?php _e( 'Page not found', 'wpcurso' ) ?></h1>
+                    <p><?php _e( 'Unfortunately, the page you tried to reach does not exist on thsi site!', 'wpcurso' ) ?> </p>
                 </header>
 
                 <div class="error">
-                    <p>Que tal fazer uma pesquisa: </p>
+                    <p><?php _e( 'Hou about doing a search?', 'wpcurso' ) ?> </p>
                     <?php echo get_search_form(); ?>
                     <?php the_widget( 'WP_Widget_Recent_Posts', array(
-                        'title' => 'latest posts',
+                        'title' => __( 'latest posts', 'wpcurso' ),
                         'number' => 3, 
                     ) ); ?>
                 </div>

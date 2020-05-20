@@ -9,9 +9,9 @@
   </h2>
   <div class="meta-info">
     <p> 
-      by <spam><?php the_author_posts_link(); ?> </spam>
-      Categories: <spam><?php the_category( '' ); ?></spam>
-      <?php the_tags( 'Tags: <spam> ', ', ', '</spam>' )?>
+    <?php _e( 'by', 'wpcurso' ) ?> <spam><?php the_author_posts_link(); ?> </spam>
+    <?php _e( 'Categories:', 'wpcurso' ) ?> <spam><?php the_category( '' ); ?></spam>
+    <?php the_tags( __( 'Tags:', 'wpcurso' ), ', ' )?>
     </p>
     
   </div>

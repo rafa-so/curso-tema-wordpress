@@ -5,10 +5,10 @@
         </h1>
         <div class="meta-info">
             <p>
-                Posted in <?php echo get_the_date(); ?> 
-                by <?php the_author_posts_link(); ?> </p>
-            <p>Categories: <?php the_category( ' ' ) ?></p>
-            <p><?php the_tags( 'Tags; ', ', ' ) ?></p>
+                <?php _e( 'Posted in', 'wpcurso' )?> <?php echo get_the_date(); ?> 
+                <?php _e( 'by', 'wpcurso' ) ?> <?php the_author_posts_link(); ?> </p>
+            <p><?php _e( 'Categories:', 'wpcurso' ) ?> <?php the_category( ' ' ) ?></p>
+            <p><?php the_tags( __( 'Tags:', 'wpcurso' ), ', ' )?></p>
         </div>
     </header>
 
