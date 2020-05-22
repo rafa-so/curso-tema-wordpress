@@ -17,6 +17,13 @@ function load_scripts(){
     'all');
 }
 
+function wpcurso_gutenberg_fonts(){
+  wp_enqueue_style( 'lato-font',   'https://fonts.googleapis.com/css?family=Lato:400,900' );
+  wp_enqueue_style( 'oswald-font', 'https://fonts.googleapis.com/css?family=Oswald:400,900' );
+}
+
+add_action( 'enqueue_block_editor_assets', 'wpcurso_gutenberg_fonts' );
+
 add_action('wp_enqueue_scripts', 'load_scripts');
 
 function wpcurso_config() {
@@ -55,9 +62,11 @@ function wpcurso_config() {
      )
   ) );
   add_theme_support( 'disable-custom-colors' );
-
+  add_theme_support( 'editor-styles' );
+  add_theme_support( 'wp-block-styles' );
   
-
+  add_editor_style( 'css/style-editor.css' );
+  
   $textdomain = 'wpcurso';
   load_theme_textdomain( $textdomain, get_template_directory() . '/languages/' );
 }
