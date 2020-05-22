@@ -41,7 +41,23 @@ function wpcurso_config() {
     'height' => 110,
     'width' => 200
   ));
+  add_theme_support( 'align-wide' );
+  add_theme_support( 'editor-color-palette', array(
+    array( 
+      'name'  => __( 'Blood Red', 'wpcurso' ),
+      'slug'  => 'blood-red',
+      'color' => '#b9121b'
+    ),
+    array( 
+      'name'  => __( 'White', 'wpcurso' ),
+      'slug'  => 'white',
+      'color' => '#fff'
+     )
+  ) );
+  add_theme_support( 'disable-custom-colors' );
+
   
+
   $textdomain = 'wpcurso';
   load_theme_textdomain( $textdomain, get_template_directory() . '/languages/' );
 }
